@@ -1,0 +1,61 @@
+Cache Configuration
+
+   1 8-way set associative entries
+   of line size 16 bytes
+
+
+Results for Each Reference
+
+Ref  Access Address    Tag   Index Offset Result Memrefs
+---- ------ -------- ------- ----- ------ ------ -------
+   1  write      12c      12     0     12   miss       1
+   2   read      130      13     0      0   miss       1
+   3   read      130      13     0      0    hit       0
+   4   read     1134     113     0      4   miss       1
+   5  write     1138     113     0      8    hit       0
+   6  write     2130     213     0      0   miss       1
+   7   read      130      13     0      0    hit       0
+   8   read     1134     113     0      4    hit       0
+   9  write     1138     113     0      8    hit       0
+  10  write     2130     213     0      0    hit       0
+  11   read     2134     213     0      4    hit       0
+  12   read     2134     213     0      4    hit       0
+  13   read     1134     113     0      4    hit       0
+  14  write     1138     113     0      8    hit       0
+  15  write     2130     213     0      0    hit       0
+  16   read      130      13     0      0    hit       0
+  17   read     1134     113     0      4    hit       0
+  18  write     1138     113     0      8    hit       0
+  19  write     2130     213     0      0    hit       0
+  20   read     2134     213     0      4    hit       0
+  21   read     2134     213     0      4    hit       0
+  22   read     1134     113     0      4    hit       0
+  23  write     1138     113     0      8    hit       0
+  24  write     2130     213     0      0    hit       0
+  25   read      130      13     0      0    hit       0
+  26  write     1138     113     0      8    hit       0
+  27  write     2130     213     0      0    hit       0
+  28   read     2134     213     0      4    hit       0
+  29   read       58       5     0      8   miss       1
+  30   read       68       6     0      8   miss       1
+  31   read       58       5     0      8    hit       0
+  32   read       68       6     0      8    hit       0
+  33   read       40       4     0      0   miss       1
+  34   read        c       0     0     12   miss       1
+  35   read       40       4     0      0    hit       0
+  36   read       48       4     0      8    hit       0
+  37   read       64       6     0      4    hit       0
+  38   read       20       2     0      0   miss       2
+  39   read       24       2     0      4    hit       0
+  40   read       28       2     0      8    hit       0
+  41   read       40       4     0      0    hit       0
+
+
+Simulation Summary Statistics
+-----------------------------
+Total hits       : 32
+Total misses     : 9
+Total accesses   : 41
+Hit ratio        : 0.780488
+Miss ratio       : 0.219512
+
