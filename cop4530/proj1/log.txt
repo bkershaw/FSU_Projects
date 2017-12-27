@@ -1,0 +1,132 @@
+LOG.txt
+Blake Kershaw
+CS Username: kershaw
+COP 4530
+January 4th 2017
+
+January 4th - 
+	Began by reading through Project 1 instructions, copied over all necessary files
+	per instructions. created a new file list2c.h from supplied file list2c.api
+
+January 5th -
+	Begun creating list2c.cpp by copying over all the member function
+	headers.
+
+January10th – 
+	    built makefile for flist2c.cpp only for now attempting to get code to compile
+	    but missing returns several functions.
+
+January 11th- 
+	Reviewed updated project1 Doc and updated member functions for capacity, full,
+	and empty. working on implementing code for function Excess().
+	Completed function implementation for capacity, full, and
+	empty.  Stuck on LinkIn and LinkOut and unable to compile code until these
+	functions are completed.
+
+January 12th – 
+	Code compiled error free, however there are incomplete member functions that
+	need proper implementation.  The goal of the day was to get the code to
+	compile so I can begin testing and understand how each function is
+	intended to work.  Currently trying to get PushFront() to work properly but is
+	throwing segmentation fault errors that appears to be caused from NewLink()
+	using couts to see where the error is thrown at.
+
+January 15th – 
+	After days of issues with Segmentation Fault, I found the issue in the
+	development constructor that not calling Init() therefore head and tail nodes
+	were not being setup prior to the pushfront implementation of adjusting links
+	resulting in segmentation fault.  Since fixing the issue compiled and testing
+	nicely.  Spent the rest of the day refactoring and compiling. Will begin testing
+	more in depth tomorrow with flist and flist2c
+
+January 17th – 
+	Compiling error free and in a stable running environment.  all forms of push,
+	pop, remove, insert work as desired.  After rereading project requirements, I
+	realized that head and tail must move throughout the list as methods are called
+	the idea of head = head_->prev_ is difficult for me to understand and grasp,
+	posted on DB awaiting a response so I can move forward.
+
+January 19th – 
+	Finally understand the concept of head = head->prev could successfully make the
+	changes to the necessary functions to meet the project specs.  After further
+	testing I realized there was a issue with my Dump() and how it reads/prints
+	nodes between  tail and head.  Spent 3-4 hrs of playing around with loops and
+	list iterators in order to properly implement Dump() and is printing as desired.
+
+January 21st – 
+	Flist2c.x appears in working order moving forward to mlist and mlist2c, I do not
+	understand how to read its output information when running (mlist2c.x 1) it
+	prints starting dynamic random test of List < char > but than nothing is printed
+	and is as if it is stuck, I am trying to troubleshoot it but I need better
+	understanding of what the program is trying to do.  However (mlist.x  1) runs
+	and completes test, so again I do not understand how to properly interpret the
+	results.    
+
+January 22nd – 
+	After further research mlist2c.x was not printing correctly due to poor pointer
+	management, after updating its management I begin receiving testing errors such
+	as "forward check failure", as well as "backward check failure" which told me I
+	still had pointer errors.  In addition to that there was size mismatch errors,
+	however I think that was due to the pointer management error and once that was
+	resolved it would resolve the other as well. Spent a couple hours playing with
+	cout's to see if I can figure out which push, pop, insert, or remove function
+	was causing the error.  After a couple hours, I        realized that the couts
+	were not helping so I will look at this with a fresh pair of eyes in the
+	morning.
+
+January 23rd – 
+	I began inspecting each line of code in my functions that alter the pointers
+	locations and physically drew pictures of each on a piece of paper when I
+	reached Remove function the pointer logic was so far off it was deleting pointer
+	locations without linking them and it was the main culprit. I rewrote the code
+	for both remove functions and kept searching for any other pointer errors that I
+	could find.  Compiled and ran mlist2c.x everything is now working and running,
+	only thing I can see at this point is Excess() numbers are a bit high.  I think
+	it is caused by my Release() function.  I wrote a little while loop in efforts
+	to clear the excess nodes when Release() is called, it seems to help on some
+	runs but others not at all.          
+
+January 26th -
+        Reviewed files one more time before submiting.  After submiting proj1,
+        there was a diff on the outputs f1-4.  With a little nudge by Dr.Lacher
+        I was able to succussfuly find an error printing '\0' between each
+        output character.  fixed that issue and everything is working as it should.    
+
+January 27th -
+	Final test resulted in improper implmentation of clear() and release().
+	Adjusting these two functions fixed the output to match properly.
+
+Test summary:
+              At the beginning of the assignment I was not sure what exactly
+              this project was going to entail because the notes seemed to
+              provide all the source code.  As time went on I quickly realized
+              that the project implementation version was similar but quite
+              different, grasping the concept of circular list with a dark side
+              was a bit hard at first compounded with head and tail pointers
+              that float around the list was even tougher.  Once I could wrap my
+              head around that and grasp a visual model of the list, coding it
+              became easier.  Over the past couple weeks shaking off the rust of
+              basic c++ syntax and chasing pointers, pointing to wrong nodes.  I
+              could get it under control.  The biggest ahha moment was when I
+              realized that head and tail are not actually nodes but pointers
+              that just point to the front and back of the list, it was much
+              easier to just assign head = head->prev when popping front instead
+              of doing a bunch of pointer arthritic.  Once I learned that push
+              and pop methods began working as compared to the flist2c_i.x
+              version.  After completing flist2c.x testing by doing various
+              command of push, pop, insert, remove and comparing outputs to
+              flist2c_i.x I began testing on mlist2c.x and mlist.x at first I
+              did not understand what the output information was showing or how
+              to interpret it.  Dr. Lacher provided some              insights
+              and helped to understand the concepts.  mlist2c.x kept erroring
+              out with a forward and backward check failure caused in the
+              checkLinks function.  This meant I had a pointer management
+              error.  Back to the drawing board, locating the error in the
+              remove functions, quickly rewrote logic, compiled, and executed.
+              Ran several tests without crashing only issue was Excess() nodes
+              were quite high, implemented a while loop in Release() to delete
+              excess nodes when called.  This project took about 50-60 hours
+              total of research and programing and although it was aggravating I
+              enjoyed it and had fun, it gave me a great understanding of the
+              intricacies of lists and their importance in the field of
+              programming.

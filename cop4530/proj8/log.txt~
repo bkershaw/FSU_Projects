@@ -1,0 +1,41 @@
+log.txt
+Blake Kershaw
+4/18/2017
+
+
+April 18th:
+      Coppied all files over neccessary for project 
+
+April 19th: 
+      built moviematch.h with definition and implmentations, left all
+      implmentations blank unless returning values if so gave them dummy values
+      just so that I was able to compile and build kb.x even though there is no
+      logic and it is unable to run it provides me with a nice clean start all
+      ready for implmentations.  Started adding implmentatins of Load() it is
+      very similar to wordsmith reading in the movies and actors incrementing
+      the counters and first checking to see if it exsits before inserting into
+      vector.  making sure to call line() on every incoming movie and actor.
+      Than Hash data and call Rehash to setup the hash table.  Finally add the
+      verticies and edges for the graph with a call to addEdge()
+
+      Init()
+
+April 20th :
+       
+
+April 21st :
+
+
+April 22nd:
+      unable to complete any testing due to issue with proccessing g_lower_bound
+      I have passed it 4 arguments as required and still screaming error due to
+      mismatch type 'const'.  Changed operator() to const fixing the error.
+      Still not sure why this was a problem but satisified compiler.
+
+April 23rd:
+      Unable to complete final test on autobot due to shell server being down. *update:
+      Was able to submit through quake server and have many output diff's due to
+      cout statments, and a massive dump of data_[] printing out every vector
+      index.  Issue was found in a call to hint_.dump() printing the entire
+      vector in every instance of kb.x this was from a test I was doing to check
+      the iterator for begin and end  

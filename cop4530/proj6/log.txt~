@@ -1,0 +1,44 @@
+Blake Kershaw
+Log.txt
+bk15b
+COP4530
+3/21/2017
+
+March 21 2017:
+      Coppied files, built makefile with proper targets for all executables as
+      instructed in the spec sheet.
+
+March 22nd 2017:
+      After reviewing the document and looking over the functions requring my
+      implmentations of Insert, Retrieve, Includes, Remove, and operater ++ 
+      the assignment appears pritty straight forward and the logic should be
+      simple.  But I am trying to figure out what C::method should be called in
+      the Insert implmentation currently and exactly what it should return.  I
+      keep getting erros in regards to iterators so I must be assigning the
+      Includes Iterator wrong.  Will return to this tomorrow.
+
+March 23rd 2017:
+      I am still stuck on Insert, and also Includes.  So I figured I would move
+      on to Retrieve and Remove. Again I have all the logic in place but I need
+      to figure out how to assign the Iterator properly so that I can properly
+      iterate through the table and return 1 or 0 in the case of Retrieve or
+      actually Remove by value.  Waiting for clarification on the DB.
+
+March 26th 2017:
+
+March 28th 2017:
+
+March 31 2017:
+
+April 1st 2017:
+      Grade Bot passed all tests except Test3 which had weired results that I
+      did not quite understand at first but now it makes sense it was testing my
+      Iterator specifically the implmentation of ++ operator of which I had way
+      wrong once I walked through the logic on a piece of paper I was able to
+      resubmit and pass all tests.  I am not convinced I have a full
+      understanding of hashtables after this assignment, as I was just trying to
+      get this project to compile and pass tests.  I would love to have a
+      detailed lecture that walks through the logic and intricies of the
+      subject.  The notes are filled with information but I have not fully
+      grasped it and I have read it twice now.  
+      

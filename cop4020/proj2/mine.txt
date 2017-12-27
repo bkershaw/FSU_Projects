@@ -1,0 +1,52 @@
+                    BEGIN: 95, 98, 101, 104
+                     COMM: 51, 95, 96
+                      EOF: 113, 120
+                    IDENT: 110, 122
+                  INITIAL: 98, 104
+                PROCESSOR: 50, 101, 102
+                       Z_: 46
+                        a: 46
+                    alpha: 46, 101, 110
+                 asterick: 38, 41, 42
+                     back: 39, 44, 48, 124
+                    begin: 134, 136
+                character: 25, 92, 93, 95, 101, 110
+                     comm: 41
+                  comment: 27, 101, 108, 110
+           const_iterator: 134, 136
+                  control: 29
+                     cout: 135, 138, 140, 142
+                    digit: 45, 101, 110, 111
+                    ditto: 40, 48, 92
+                      end: 134, 136
+                  endComm: 42
+                     endl: 142
+                     exit: 129
+                    first: 135, 137
+                  forward: 37, 41, 42
+                    front: 137
+                       it: 134, 135, 136, 137
+                lineCount: 28, 98, 104, 109, 124, 125
+                     list: 32, 134, 136
+                      lit: 136, 137, 138, 140
+                        m: 32, 124, 125, 134, 137
+                     main: 116
+                      map: 32, 134
+                        n: 47, 98, 104, 109
+                    octal: 43, 44
+                    octch: 44, 48
+                      pre: 30
+                   printf: 128
+                push_back: 125
+                    quote: 36, 48, 93
+                        s: 26, 92, 93, 95, 101, 110
+                    schar: 47, 48
+                   second: 136
+                     setw: 135
+                      std: 32, 134, 135, 136, 138, 140, 142
+                   string: 32, 134
+                      tok: 117, 120, 121
+                        x: 50, 51
+                    yylex: 120
+                   yytext: 124, 125, 128
+                       zA: 46

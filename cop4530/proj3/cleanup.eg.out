@@ -1,0 +1,33 @@
+Text Analysis for files: cleanup.eg
+
+word                 frequency
+----                 ---------
+-123                         4
+-456                         4
+100-200                      4
+100.200                      4
+123,456,789                  4
+123::321                     4
+123::eee                     4
+aaa-bbb                      4
+abc                          4
+alpha                        4
+bbb                          4
+beta                         4
+ddd::321                     4
+ddd::eee                     4
+def                          4
+file.zip                     4
+hhh::iii                     4
+hij                          4
+html                         4
+hyphen                       4
+hyphen-hyphen                4
+input                        4
+jj                           4
+klm                          4
+law.com                      4
+output                       4
+
+Number of words: 104
+Vocabulary size: 26

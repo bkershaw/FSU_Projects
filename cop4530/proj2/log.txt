@@ -1,0 +1,52 @@
+Proj2: Spyware
+Blake Kershaw
+January 27th, 2017
+COP4530
+
+January 27th:
+	Reviewed project instructions, copied proj2 files to my local dir. Begun
+	by reviewing both cpp files provided to see what might be needed for
+	compare_spy.h aswell as Gsearch.h.  Coppied LessThanSpy method headers
+	into compare_spy.h.  I am thinking Gsearch.h is going to
+	be the hardest to implment of the two, I will leave it for last.    
+ 
+January 29th-31st:
+	Upon completeing implmentation in both header files, attempting to
+	compile lead to several errors all centering around "invalid operands to
+	binary expression". After posting on the DB Dr.Lacher gave me great
+	insight that I was doing an illegal operation of pointer arithmetic with
+	list iterators, and that seq must use sequential search algroithm.  I
+	realized that my implmentation of binary search must be changed for
+	lower_bound an upper_bound.  A simple while loop that increments the
+	iterator after a check through our overloaded operator in compare_spy.  
+        This time program compiled but would crash once data was input.  I quickly
+	realized that the issue was in ()operator overload function,
+	I was using the following implmentation:
+	      	    if (t1 < t2)
+		       return 1;
+		    return 0;    
+ 	after pondering on this algorithm for a several minutes I realized my
+	logic was all wrong and the '<' operator already returns a true or false
+	so there is no reason to complete a double return.  Once this error was fixed
+	compiled both programs are working as intended.  Will begin testing tomorrow.    
+
+February 1st:
+	 created several number files using the ranuint.x ranging from 10-100000
+	 numbers tested the files using search_spy.x and the output information
+	 was kinda cool.  Noticing quickly that a very small dataset such as 10
+	 numbers is much faster to sort via selection sort but as you increase
+	 data to 100 numbers selection sort quickly becomes terrible and slow.
+	 Increasing to 10000+ selection sort is basically unusable, at 100000
+	 forget about it.  While at datasets of 100000 heap sort and insertion 
+	 sort are not great but light years ahead of selection sort.
+
+	 Moving onto sort_spy.x the <char> version is a little neat program I
+	 particularly like the table generated at the end comparing binary,
+	 recursive random access iterator, and sequential search.  Again the
+	 clear winner is binary search due to its ability to cut the search space in
+	 half.  The thing I found interesting is when the size is at 100,000
+	 items the minimum comps for sequential search is 3 instead of 1.  The
+         ability to search a list for 1 paticular item set of 100,000 with a
+	 maxium comparison of 17 is amazing.    
+	   
+	 

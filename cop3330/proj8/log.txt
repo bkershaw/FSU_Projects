@@ -1,0 +1,33 @@
+Log.txt
+
+Blake Kershaw
+11/29/15
+Kershaw
+
+11/29/15, 5:30pm - copied over all files to begin coding Queue.cpp and Queue.t
+
+12/1/15, 7am - coppied over proj7 stack files into proj8 directory and began editng the code.
+
+12/1/15 6pm - fqueue.cpp is so similar to fstack.cpp just a few changes and I believe I have a good workin test client.  Now just to finish this queue template file
+and we should be ok.
+
+12/2/15, 8am - these push, pop functions are really beating me up I think I am close I need to figure out the proper the syntax of pop, going to think about this 
+today and come back to it fresh.
+
+12/3/15 - 7:30pm - ok everything seems to be proccessing correctly found some very good examples of the code in narrative section of our class notes, wish I knew 
+these were here before I spent alot of time thinking on this.  Now for some further testing and I think its all set.
+
+12/4/15 - 5pm - having a few issues with my pop method if I dont get this with in the next hour I think I am going to submit as is I need to get started on the 
+final exam study time.
+
+12/5/15 - 8:15 am - submited my program after I finally got it worked out so 
+I thought.  It appears I am having the same issue that I had with proj7 and 
+my program is not printing a whitespace between the output and contents.  
+This took me 2 days to figure out in stack I think I have it figured out but 
+well see .....
+
+12/5/15 - 8:51am - Okay I think I got it I was missing (std::cout, ofc) in all my S.display() method calls and I think that was the reason I was failing the testing 
+I fixed them and I believe it should work lets go gradebot!
+
+12/6/15 - 1:33pm  After reading some disscusion boards Timothy helped me to realize my program was printing a blank space after the last element and that is what 
+was hangnig me up.  I think we are all in working order now.

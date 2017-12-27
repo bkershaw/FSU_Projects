@@ -1,0 +1,213 @@
+/**************************************************************
+ *                                                            *
+ *               Name: Blake Kershaw                          *
+ *                Class: COP 4020                             * 
+ *       Assignment: Project 3(Implmenting Cparse)            *
+ *        Compile: "g++ -std=c++11 -o cparse.exe cparse.cpp"  *  
+ *                                                            *
+ **************************************************************/
+
+
+#include <stdio.h>
+#include <string.h>
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include <stdlib.h>
+#include <ctype.h>
+#include <map>
+#include <set>
+#include <vector>
+#include <list>
+
+void closure(std::string,int);
+std::map <int, std::vector <std::string> > e; //LR items
+std::vector <std::string> grammar;
+
+int main()
+{
+  int lr = 0;
+  int l = 0;
+  int map = 0;
+  char temp;
+  char line[20] = {0}; 
+  std::vector <std::string> input; // holds grammer rules
+  int inputCounter = 0;
+  int itemCounter = 1;
+ 
+  /*read input file line by line */
+  while(fgets(line,20,stdin)){
+
+    input.push_back(line); // place incoming grammar rules into list
+    ++inputCounter; //increment counter
+
+  } // end while fgets
+ 
+  std::cout << "Augmented Grammar" << std::endl;
+  std::cout << "-----------------" << std::endl;
+
+  input[0] = "'->" + input[0]; 
+  
+  //prints augmented grammar and loads I0
+  for(int i = 0; i < inputCounter; ++i){
+   std::cout << input[i];  
+   grammar.push_back(input[i]); //make copy of rules with a pointer
+   std::size_t found = grammar[i].find('>');
+   grammar[i].insert(found+1,1,'@');   
+   e[0].push_back(input[i]);
+   e[0][i].insert(found+1,1,'@');   
+  }
+  
+  char token;
+
+  for(int i = 0; i < e[map].size(); ++i){
+    std::size_t curr = e[map][i].find('@');
+    std::size_t peak = curr + 1;
+    token = e[map][i][peak];
+    
+    if( grammar[i][0] == token)
+      
+      }
+  
+
+
+
+
+
+
+
+
+  /*
+   std::size_t found = input[0].find('>');
+   input[0].insert(found+1,1,'@');
+   e[0].push_back(input[0]);
+
+  ++lr;
+  std::string copy;
+  char token;
+  int x = 0;
+  int something = 0;
+  while( lr != l ){
+        std::size_t curr = e[l][x].find('@');
+        std::size_t peak = curr + 1;
+        token = e[l][x][peak];
+        
+        for(int i = 0; i < inputCounter; ++i)
+          if( control = 1 && token == grammar[i][0]){
+            e[l].push_back(grammar[i]);
+            ++x;
+            
+            std::size_t c = grammar[i].find('@');
+            std::size_t p = c+1;
+            char tok = g[i][p];
+            
+            if( tok != token)
+              ++lr;           
+          }
+
+        
+        
+        ++l;     
+  }
+
+  /*
+
+
+  /*
+   for(int z = 0; z < inputCounter; ++z){
+        char inputToken;
+        std::string copy;
+        std::size_t curr = input[z].find('@');
+        std::size_t peak = curr + 1;
+        inputToken = input[z][peak]; //found input character
+      if( input[z].empty() )
+        --itemCounter;
+
+    for(int i = 0; i < inputCounter; ++i){
+      if( !input[i].empty() ){
+        if( inputToken == input[i][peak] ){
+          copy =  input[i]; //put copy of string in copy
+          copy.insert(peak+1,1,'@');
+          copy.erase(curr,1); //remove the first @
+          e[itemCounter].push_back(copy);
+          //          closure(copy,itemCounter); //compute closure if available
+          copy.clear(); //delete string in copy
+          input[i].clear();    
+        } //end if      
+      } //end if
+    } //end i for loop
+    ++itemCounter;     
+  } // end z for loop
+  */
+   /*   ++lr;
+   int x = 0;
+
+   while( lr != itemCounter ){
+        std::size_t curr = e[lr][x].find('@');
+        std::size_t peak = curr + 1;
+        std::string copy;
+        char inputToken = e[lr][x][peak]; //found input character
+
+        if(peak !='\0'){
+          for(int i = 0; i < grammar.size(); ++i){
+            if (grammar[i][0] == inputToken)
+              e[lr].push_back( grammar[i] );
+            else{
+               copy =  e[lr][x]; //put copy of string in copy
+               copy.insert(peak+1,1,'@');
+               copy.erase(curr,1); //remove the first @
+               e[itemCounter].push_back(copy);
+               ++itemCounter;
+            }
+              
+          }//end for loop
+        }
+
+        ++x;
+        if(e[lr].size() == x) 
+          ++lr;
+   }
+   */
+
+  /* DUMP  */
+  std::cout << "\nSetsof LR(0) Items" << std::endl;
+  std::cout << "------------------" << std::endl;
+ 
+  for(auto outerMap_it = e.begin(); outerMap_it != e.end(); ++outerMap_it)
+  {
+    std::cout << "I" << outerMap_it->first << ": " << std::endl;
+
+    for(auto innerMap_it = outerMap_it->second.begin(); innerMap_it != outerMap_it->second.end(); ++innerMap_it)
+      std::cout << *innerMap_it;
+    std::cout << std::endl;
+  } 
+
+ return 0;
+} // end main
+
+/*
+//compute closure if available
+void closure(std::string c, int iC){
+  std::size_t curr = c.find('@');
+  std::size_t peak = curr + 1;
+  char token = c[peak]; //input character
+  char gramToken;
+
+//iterate through grammar list and look for possible rule match 
+  for(int j = 0; j < grammar.size(); j++){
+    gramToken = grammar[j][0];
+    for(int i = 0; i < e[0].size(); i++ ){
+      if( gramToken == token ){
+        e[iC].push_back(e[0][i]);
+        curr = e[0][i].find('@');
+        peak = curr + 1;
+        token = e[0][i][peak]; //input character
+      }//end if
+    }//end i for loop
+  }//end j for loop
+  
+  return;
+  
+}//end closure function
+*/
+

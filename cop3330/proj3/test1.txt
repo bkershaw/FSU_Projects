@@ -1,0 +1,44 @@
+ sets after declaration:
+  s1 = { }
+       Range() = 24, Size() = 0, Empty() = true
+  s2 = { }
+       Range() = 24, Size() = 0, Empty() = true
+  s3 = { }
+       Range() = 24, Size() = 0, Empty() = true
+ sets after insertions:
+  s1 = { 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 }
+       Range() = 24, Size() = 21, Empty() = false
+  s2 = { 0 2 4 6 8 10 12 14 16 18 20 }
+       Range() = 24, Size() = 11, Empty() = false
+  s3 = { 0 3 6 9 12 15 18 }
+       Range() = 24, Size() = 7, Empty() = false
+ after s1 -= s3:
+  s1 = { 1 2 4 5 7 8 10 11 13 14 16 17 19 20 }
+       Range() = 24, Size() = 14, Empty() = false
+  s3 = { 0 3 6 9 12 15 18 }
+       Range() = 24, Size() = 7, Empty() = false
+ set operations:
+  s2 + s3 = { 0 2 3 4 6 8 9 10 12 14 15 16 18 20 }
+  s2 * s3 = { 0 6 12 18 }
+  s2 - s3 = { 2 4 8 10 14 16 20 }
+ assignments:
+  s1 = s2 + s3: { 0 2 3 4 6 8 9 10 12 14 15 16 18 20 }
+       Range() = 24, Size() = 14, Empty() = false
+  s1 = s2 * s3: { 0 6 12 18 }
+       Range() = 24, Size() = 4, Empty() = false
+  s1 = s2 - s3: { 2 4 8 10 14 16 20 }
+       Range() = 24, Size() = 7, Empty() = false
+ after removing 0 - 8:
+  s1 = { 10 14 16 20 }
+       Range() = 24, Size() = 4, Empty() = false
+  s2 = { 10 12 14 16 18 20 }
+       Range() = 24, Size() = 6, Empty() = false
+  s3 = { 9 12 15 18 }
+       Range() = 24, Size() = 4, Empty() = false
+ after Clear():
+  s1 = { }
+       Range() = 24, Size() = 0, Empty() = true
+  s2 = { }
+       Range() = 24, Size() = 0, Empty() = true
+  s3 = { }
+       Range() = 24, Size() = 0, Empty() = true

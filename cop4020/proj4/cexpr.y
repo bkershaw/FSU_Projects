@@ -1,0 +1,182 @@
+/**************************************************************
+ *                                                            *
+ *               Name: Blake Kershaw                          *
+ *                Class: COP 4020                             *
+ *       Assignment: Project 4                                *
+ *                Compile: with attached makefile             *
+ *      g++ -std=c++11 lex.yy.c y.tab.c -o c.exe -lfl         *
+ *************************************************************/
+
+%{
+  #include <stdio.h>
+  #include <string>
+  #include <cstring>
+  #include <iostream>
+
+  void yyerror(const char*);
+  int yylex(void);
+
+  struct v{
+     int num;
+     bool valid;
+  }; 
+
+  struct v sym[26];
+  bool control = false;
+
+  int computeSymbolIndex(char token);
+  int symbolVal(char symbol);
+  void updateSymbolVal(char symbol, int num);
+  void dup();
+  void res();
+  void init();
+  %}
+
+   %union{ int val; char var; }
+
+%token reset dump increment decrement s_l s_r
+%token <var> VARIABLE
+%token <val> INTEGER
+%type  <val> term assignment md post pre not negation add_sub shift and xor or paren
+
+%%
+
+program  : exprs               
+         ;
+
+exprs    :
+         | exprs dump            { dup(); }    
+         | exprs reset           { res(); }                  
+         | exprs assignment ';'  { if(!control) printf("%d\n", $2); else printf("unknown\n");
+                                                                          control = false; }
+         ;
+
+assignment: or                      {$$ = $1;}
+          | VARIABLE '=' assignment { if(!control) updateSymbolVal($1,$3); $$ = $3;}
+          ;
+
+or        : xor                   { $$ = $1; }  
+          | or '|' xor            { $$ = $1 | $3; }  
+          ;
+
+xor       : and                   { $$ = $1; }  
+          | xor '^' and           { $$ = $1 ^ $3; }  
+          ;
+
+and       : shift                 { $$ = $1;}
+          | and '&' shift         { $$ = $1 & $3; }
+          ;
+
+shift     : add_sub               { $$ = $1;}
+          | shift s_l add_sub    { $$ = $1 << $3;} 
+          | shift s_r add_sub    { $$ = $1 >> $3;} 
+          ;
+ 
+add_sub  : md                     { $$ = $1; }
+         | add_sub '+' md         { $$ = $1 + $3; }
+         | add_sub '-' md         { $$ = $1 - $3; }
+         ;
+
+md       : negation               { $$= $1; }
+         | md '*' negation        { $$ = $1 * $3; }
+         | md '/' negation        { $$ = $1 / $3; }
+         | md '%' negation        { $$ = $1 % $3; }
+         ;
+
+negation : not                    { $$ = $1;     }
+         | '-'negation            { $$ = -$2;    }
+         ;
+
+not      : pre                    { $$ = $1;     }
+         | '~'not                 { $$ = ~$2;    }
+         ;
+
+pre      : post                   { $$ = $1;                        }
+         | increment VARIABLE     { $2 = symbolVal($2); $$ = ++$2;  }
+         | decrement VARIABLE     { $2 = symbolVal($2); $$ = --$2;  }
+         ;
+
+post     : paren                  { $$ = $1;                        }
+         | VARIABLE increment     { $1 = symbolVal($1); $$ = $1++;  }
+         | VARIABLE decrement     { $1 = symbolVal($1); $$ = $1--;  }
+         ;
+
+paren    : term                   { $$ = $1;     }
+         | '('assignment ')'      { $$ = $2;     }
+         ;
+ 
+term     : INTEGER                { $$ = $1;            } 
+         | VARIABLE               { $$ = symbolVal($1); }
+         ;
+%%
+
+int main() {
+  init();
+  yyparse();
+
+  std::cout << "\nCalculator off." << std::endl;
+
+  return 0;
+}
+
+void yyerror(const char *s) {
+  printf("somethings wrong: %s\n", s);
+}
+
+ int computeSymbolIndex(char token)
+ {
+  int idx = -1;
+  idx = token - 'a';
+  return idx;
+ } 
+
+ /* returns the value of a given symbol */
+ int symbolVal(char symbol)
+ {
+  int bucket = computeSymbolIndex(symbol);
+ 
+
+  if( sym[bucket].valid == false )     
+    control = true;  
+
+  return sym[bucket].num;
+  
+ }
+
+ /* updates the value of a given symbol */
+ void updateSymbolVal(char symbol, int n)
+ {
+  int bucket = computeSymbolIndex(symbol);
+  sym[bucket].num = n;
+  sym[bucket].valid = true;
+ }
+
+/*dump*/
+void dup(){
+  char letter = 'a';
+ for(int i = 0; i < 26; i++){
+    char newL =    letter + i;
+    if( sym[i].valid)
+      printf("%c: %d\n", newL, sym[i].num);
+    else
+      printf("%c: unknown\n", newL);
+  }
+}
+
+/*reset variables to unknown*/
+void res(){
+  int i;
+  for(i=0; i<26; i++) {
+     sym[i].num = 0;
+     sym[i].valid = false;
+  }
+}
+
+/* init symbol table */
+void init(){   
+  int i;
+  for(i=0; i<26; i++) {
+  sym[i].num = 0;
+  sym[i].valid = false;
+ }
+}

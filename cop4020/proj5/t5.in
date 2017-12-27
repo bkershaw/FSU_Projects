@@ -1,0 +1,9 @@
+declare
+  foo = 0
+  bar = 1
+begin
+  if foo then
+   set bar = 0
+  else
+   set bar = 1
+end

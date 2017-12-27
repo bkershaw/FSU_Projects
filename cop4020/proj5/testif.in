@@ -1,0 +1,4 @@
+if call eq? call read $ ’yes $ then
+call display "OK" $
+else
+call display "Why not?" $

@@ -1,0 +1,59 @@
+log.txt
+Blake Kershaw
+COP4530
+bk15b
+Map_ADT Binary Tree
+
+March 5th, 2017:
+      Coppied over all files from proj5 directory aswell as coppied over
+      previous wordsmith files for updating for use with maps.
+
+March 6th, 2017
+      Spent a couple hours revising oat to become the new Map_adt very tedious
+      job to make sure everything was converted properly and new methods,
+      classes were coppied over from the project directions properly.  Reviewed
+      the project specs and will begin implmenting the new functions this week.
+
+March 8th, 2017
+      Built the makefile for testing and attempted to compile as is, resulted in
+      20+ errors and will need to check flags.
+
+March 10th, 2017
+      Have been stuck on failing to compile due to reference error I cannot
+      track down where the issue is coming from my protypes match calls.  In the
+      mean time started logic for Decrement, Increment(level order), and
+      overloaded operators.
+
+March 12th, 2017
+      Still stuck on compile errors keeps complaining about a template
+      declaration which does not make sense to me because it matches the same
+      declaration of all the other functions.  I am unable to test any logic in
+      my functions until the program at least compiles.  Taking a couple days
+      off while its spring break and will finish this up over the weekend.
+
+March 18th, 2017
+      Spent several hours, posted on the DB I still cannot get a compiliation of
+      fmap.x  Reviewed the notes incase I missed something I believe it to be a
+      #include issue.
+
+March 19th, 2017
+      After another 4 hrs of no luck compiling Dr. Lacher posted on the DB in
+      regards to checking const and non-const delcarations.  After all that he
+      was right I was mising const versions of Begin,rBegin,End, rEnd once I
+      fixed that and added a missing '}' viola it compiled no problem...
+      
+      On to testing my logic tonight TF traverse worked no problem, so it should
+      be no problem to get TR to work its just a miror of TR but it keeps
+      looping endlessly...  Moved on to TL traverse and was having a issue due
+      to my implmention of levleorderEnd, once I worked the kink out there it
+      was traversing just fine
+      
+      Moved on to updating wordsmith with the iterator version that jumps
+      through frequency_ and prints the key and data for each its very similar
+      to the first wordsmith which used a iterator to write to a outfile.
+
+      The only thing left was TR traverse which was still looping endlessly.
+      After taking a break for a hour and reviewed the logic ONE more time I
+      realized what the issue was.  I left a rchild_ condition check and once
+      that was changed to lchild_ the loop stoped and the program succesfully
+      traversed forward, backward, and on level order.  

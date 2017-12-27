@@ -1,0 +1,30 @@
+Blake Kershaw
+proj 7
+log.txt
+
+November 15 2015 - Copied all neccessary files over for proj7.
+
+November 16 2015 - began by coding stat.t template file getting the easy 
+stuff out of the way and creating the class with the provided constructors, 
+destructors and methods.
+
+November 16, 2015 - 6:34pm - Started doing all the easy stuff, created fsu 
+namespace, created the template and all of the template constructors, etc... 
+just need to code the bodies of the methods and constructors.
+
+Novemeber 17, 2015 - 7pm - coded all of the constructors, and functions.  I 
+need to begin testing them tomorrow, I need to figure out what to do with the 
+Dump and Display method, I think those are going to be the 2 pain in the butt 
+functions.
+
+November 18, 2015 - 5:50pm - stack.t was giving me a heck of a time with a end of non-void function warning.  I finally go to the bottom of it and just needed to 
+supply a return option if the loop conditions were not met.  My big issue now is how to implement a generic fsu::Stack. feeling dumb right now.
+
+November 19, 2015 - 7am I have been working on this all day using cout statments trying to find why makefile keeps giving me this compiled error, it doesnt make 
+any sense to me.  It's screaming about a my fsu::Stack being out of scope, I have scoured the web searching for similar bugs but cant find any.
+
+November 22, 2015 - A break from coding has done be well, I looked at it again today and noticed the issue kept coming up with my destructor and our class 
+instructions were to not implment a destructor which I did not.  The issue was that I didn't put empty {} after my prototype so thats where the issue was coming 
+from, what a silly issue and lesson well learned.
+
+November 22, 2015 - deleted a std::endl that I believe was messing up my output ofc.

@@ -1,0 +1,26 @@
+This is a Queue < T > test program
+Push(Tval)  .............  + or 1
+Pop()  ..................  - or 2
+Clear()  ................  C
+Front()  ................  F
+Empty()  ................  E
+Size()  .................  S
+Copies  .................  =
+Display queue ...........  D
+Dump() ..................  U
+Display this menu  ......  M
+Enter [command][argument] ('M' for menu, 'Q' to quit): Enter [command][argument] ('M' for menu, 'Q' to quit): Enter [command][argument] ('M' for menu, 'Q' to quit): Enter [command][argument] ('M' for menu, 'Q' to quit): Enter [command][argument] ('M' for menu, 'Q' to quit): Enter [command][argument] ('M' for menu, 'Q' to quit): CopyTest:
+Copied object       size: 5
+                contents:  1 22 333 4444 55555
+AssignTest:
+Original object     size: 5
+                contents:  1 22 333 4444 55555
+Assignee object     size: 5
+                contents:  1 22 333 4444 55555
+ConstTest: OK
+Enter [command][argument] ('M' for menu, 'Q' to quit): Queue size     = 5
+Enter [command][argument] ('M' for menu, 'Q' to quit): Front of Queue: 1
+Enter [command][argument] ('M' for menu, 'Q' to quit): Queue is not empty
+Enter [command][argument] ('M' for menu, 'Q' to quit): Queue contents:    1 22 333 4444 55555
+Enter [command][argument] ('M' for menu, 'Q' to quit): 
+Have a nice day.

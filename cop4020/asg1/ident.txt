@@ -1,0 +1,21 @@
+BB/* Example Program */
+#
+        main for abc123 blake 'b'     
+%
+$//adflkj"adsflk"jasdflkj
+%
+#
+null
+"this is a test." 
+_123 
+AB_ 
+-
+24 
+"this is a bigger\
+   test of a string."   
+'\5120'
+'4' !
+test++
++
+-
+!

@@ -1,0 +1,63 @@
+Blake Kershaw
+log.txt
+4/5/2017
+
+April 5th, 2017
+      Coppied over required docs and began creating bfsurvey.h per instructions
+
+April 7th, 2017
+      Created dfsurvey.h aswell as fdfsurvey_dg.cpp, fdfsurvey_dg.cpp,
+      fbfsurvey_dg.cpp, fbfsurvey_ug.cpp.  rebuilt makefile and graph.h with no
+      implmentations only the declarations and the template headers in order to
+      make sure that my organzation is correct. I attempted to compile but I
+      keep getting an error in regards to a reference g_ not bound to a value,
+      failure to initialize. 
+
+April 10th, 2017:
+      Still unable to fix the reference g_ error so for now I focused on the
+      implmentation that of graph.h that is supplied in the graph notes.  I
+      found the graph notes a bit hard to understand and would love to see a 
+      lecture on the subject for better comprehnsion.  I turned to you youtube 
+      to better understand the logic and overall picture in order to implment
+      AddEdge(), Clear(), Reverse(), InDegree(), OutDegree(), and VrtxSize().
+      I figured VrtxSize() is pretty simple because it just returns al_vector
+      size using the vector Size() function, SetVrtxSize is similar again just
+      use the vector SetSize() method.  AddEdge is a bit more trickey because
+      you have to add both from and to vector at the same time so just took a
+      minute to think about it and break it down, and I decided to use the
+      vector PushBack() method but I suppose Insert() would work just aswell.  I
+      am still unable to compile due ot my reference issue but in the mean time
+      I am testing graph.h using fgraph.x  So I am compiling just Dump is not
+      displaying my graph properly.
+
+April 13th:
+      I think my Dump method is not displaying properly because I have yet to
+      implment the ALD constructors which is a bit confusing to me right now
+      because a_ is a protected data member of ALU but is not able to be used by
+      ALD directly.  I feel there is an easy soultion to this but I currently do
+      not know.  In regards to my previous error when trying to compile using bf
+      and df survey.h the issue was that my private variables needed to be
+      listed before the function delcarations because many of the declarations
+      also had implmentations already, so they were unable to reference the data
+      members.
+
+April 15th:
+      Making a bunch of progress now thanks to Dr.Lacher hinting that I can call
+      ALU constructor inside ALD's constructor, once I fixed that issue Dump()
+      is working great.  However Reverse is still not.  I am stuck right now
+      on Reverse because I first clear() d and than I set the size of d vector 
+      I loop through using a for loop but there must be a inner loop in order to
+      complete the reverse but I am not sure how to logically code it.  Going to
+      think about it.  Everything else is working great and passing all tests on
+      my end.  I had a hicup in bf and df search not printing the conque & constack
+      properly but that was because I overlooked the instructions and failed to
+      add the provided traceQue to Search() funtions but that was a easy fix
+
+April 16th:
+      Last think needed is Reverse() inside my graph.h and I began playing
+      around with a AdjIterator and experimenting but I eventually got it the
+      trick was realizing I can just use d.AddEdge() and pass it the loop
+      variables but also derefrencing the AdjIterator inside of d.AddEdge()    
+      I am currently passing all tests and gradebot is showing nodiff!
+      Happy Easter.         
+   

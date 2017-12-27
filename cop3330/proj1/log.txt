@@ -1,0 +1,38 @@
+log.txt # log file for UIntSet project
+Date: 8/25/15
+Name: Blake Kershaw
+CS Username: kershaw
+
+August 25th, 3:30pm - copied and created neccessary files to begin project.
+
+August 27th, 9:00am - Began coding main.cpp with cout statments and for loops
+for input and output of array.  Struggling to figure out how to stop the cin of
+array elements when the max size is set to 100.
+
+August 28th, 8:00am - coded header file and stats.cpp file.  Having issues with
+the sort and median algorithms.
+
+August 28th, 10:00pm - figured out the proper cin syntax and the sort function.
+
+August 28th, 11:00pm - Irritated because my program will not print out all of
+the cout statments.
+
+August 31st, 12:15pm - Been testing for hours I cannot get my program to
+complete all of the cout statments, posted disscusion board inquiries awaiting
+some feedback.
+
+September 1st, 11:00pm - After strugglng with my cout statments I finally got it
+working but not sure what was causing it just found a hack to force it to print
+to the console. 
+
+September 5th, 10:00am - Version 1.8 the sort function would not always sort all
+integers in the array.  after testing the code several times I discovered the
+swap call was placed inside the inner loop of the sort function which would
+cause the function not to swap the integers when it was done with the inner
+loop.  I also removed all the counter - 1 from loops to allivate any off by one
+errors.  My workaround was to inatialize counter as -1 instead of 0.  After
+further testing it appears my program is running as inteded with no errors or flaws.
+
+September 9th, 8:30pm - Reviewed testing e-mail and there were 4 warnings in
+regards to comparing a unsigned int to int.  I fixed this issue by changing
+those ints to unsigned ints.  When I test my code I do not recieve any warnings.

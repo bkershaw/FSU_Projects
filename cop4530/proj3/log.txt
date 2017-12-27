@@ -1,0 +1,46 @@
+Blake Kershaw
+
+February 7th:
+	 Coppied over all files per instructions, read over instructions and
+	 begun planning on how to tackle this assignment.
+
+February 8th:
+	 Created wordsmith.h, and wordsmith.cpp, aswell as makefile with no
+	 implmentation in order to make sure all the inlcudes were correct in
+	 order to compile.  Readtext() seems like the meat and potatoes of the entire program, and
+	 trying to figure out how to insert into the set without errors
+
+February 10th-13th:
+	 Took 3 days to figure out why I was unable to insert into the vector
+	 and why it kept throwing errors, the errors were because insert() is
+	 expecting a pair object and I was inserting a string object, once I
+	 realized this, I created a pair object e.
+
+February 19th:
+         program is running perfectly with simple strings with no special
+         characters updating counts, inserting correctly now moving onto
+         cleanup.cpp
+
+February 20th:
+         I began by making if statments for each case and realized that
+         this is the wrong way to go about it. I deleted everything after 4
+         hours of testing and will try again tomorrow.
+
+February 21st:
+	 Okay thought about cleanup and decieded to create one big if statment
+	 that only accepts the characters if encountered per the cleanup.rulz
+	 instructions.  This worked great to get rid of leading junk and now all
+	 that was less was several special cases.  played with special cases
+	 until I could match the outputs of cleanup.eg.out.  Next I checked to
+	 see how big.txt would be read through and found that it took an
+	 extremly long time on my program to run (approx 5min).  After a DB post
+	 Dr.Lacher clued me in that I was using sequential serach to insert into
+	 the set and this was circumventing the conviences of a set.  
+
+February 22nd:
+	 Repaced entire insert and compare with a simple if else statment that
+	 uses the Retrieve() api.  Was super simple and wish I knew about it a
+	 week ago.  Works just like ws_i.x     
+    
+
+	  

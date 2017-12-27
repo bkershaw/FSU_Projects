@@ -1,0 +1,22 @@
+# A Makefile for cexpr.exe
+
+LEX = flex
+YACC = yacc -d
+
+CC = g++ -std=c++11
+
+calc: y.tab.o lex.yy.o
+	$(CC) -o calc.exe y.tab.o lex.yy.o -lfl 
+
+lex.yy.o: lex.yy.c y.tab.h
+lex.yy.o y.tab.o: cexpr.h
+
+y.tab.c y.tab.h: cexpr.y
+	$(YACC) cexpr.y
+
+lex.yy.c: scan.l
+	$(LEX) scan.l
+
+clean:
+	-rm -f *.o lex.yy.c *.tab.*  cexpr *.output
+

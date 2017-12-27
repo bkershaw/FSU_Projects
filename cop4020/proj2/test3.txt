@@ -1,0 +1,12 @@
+      a = '"';
+
+      a = '\027';
+
+      a = '\\';
+
+      printf("abcdef\n");
+
+      b = "   \" ' \" ";
+
+b = "efghijk\
+lmnop";

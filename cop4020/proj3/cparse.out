@@ -1,0 +1,41 @@
+Augmented Grammar
+-----------------
+'->S
+S->bAc
+S->Bc
+A->d
+B->d
+
+Sets of LR(0) Items
+-------------------
+I0:
+   '->@S                goto(S)=I1
+   S->@bAc              goto(b)=I2
+   S->@Bc               goto(B)=I3
+   B->@d                goto(d)=I4
+
+I1:
+   '->S@               
+
+I2:
+   S->b@Ac              goto(A)=I5
+   A->@d                goto(d)=I6
+
+I3:
+   S->B@c               goto(c)=I7
+
+I4:
+   B->d@               
+
+I5:
+   S->bA@c              goto(c)=I8
+
+I6:
+   A->d@               
+
+I7:
+   S->Bc@              
+
+I8:
+   S->bAc@             
+

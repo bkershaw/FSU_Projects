@@ -1,0 +1,24 @@
+log.txt # log file for SunPass Vehicle project
+<October 21st, 2015>
+<Blake Kershaw>
+<kershaw>
+
+October 21st 8:30pm - copied all files to my proj5 dir. and begin 
+working on code for tracker.cpp
+
+October 22nd 7pm - struggling with how to read in the array from a data file and instatiate new objects, 
+obviously using new is the key but we need to create a new object with each array element and than cout in 
+table, sleeping onit.
+
+October 23rd 9am - sleep did me well, we created the do while loop to loop through a switch a statment and 
+read in each element with a counter.  A pointer pointing to the new object to be created.  Now this table 
+spacing is a nightmare!
+
+October 25th 8:12pm - I CANNOT FIGURE OUT THIS SPACING IV READ THE DISSCUSON BOARD AND IT IS JUST AGRIVATING 
+ME.  I know this is a simple fix but I cant figure it out.  I am just going to submit what I have and 
+hopefully tomorrow I can get to the bottom of it.
+
+October 26th 5:20pm - Finally figured out the setwidth settings to properly fit the table.
+
+October 27th 7:10am - segment_wide.data was a pain trying to figure out the table.  My problem all along was the DOT and SerialNumber would not revert back to the origonal size of C5 & C6.  So I simply 
+did a reset outside of the for loop and bam it worked! =)

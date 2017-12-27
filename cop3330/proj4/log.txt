@@ -1,0 +1,13 @@
+log.txt # log file for SunPass Vehicle project
+<October 15th, 2015>
+<Blake Kershaw>
+<kershaw>
+
+October 15th 7am - copied all files to my proj4 dir
+
+October 15th 7:15am - began coding header files, getting the easy stuff 
+out of the way and than will begin working on .cpp files
+
+October 17th 11:50am - finished coding shapes.cpp file (was not to challenging).  vehicles.cpp posed alot of 
+problems for me will be back later for testing.  I think the issues with my tester.x is somewhere in my char 
+array it is not allocating elements properly.

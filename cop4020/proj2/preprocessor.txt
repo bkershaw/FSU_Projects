@@ -1,0 +1,22 @@
+#include <string>
+#include <list>
+#include <map>
+#include <cctype>
+#include <iostream>
+#include <iomanip>
+
+#define CHAR    256
+#define NUM     257
+#define IDENT   258
+#define INVALID 259
+
+// Macro to define cursor lines   
+#define CURSOR(top, bottom) (((top) << 8) | (bottom))  
+  
+// Macro to get a random integer with a specified range   
+#define getrandom(min, max) \  
+    ((rand()%(int)(((max) + 1)-(min)))+ (min))
+
+"#define"                     { preProcessor; }
+"#undef"                      { preProcessor; }
+"#ifdef"                      { preProcessor; }

@@ -1,0 +1,40 @@
+# makefile for WordSmith project
+# Blake Kershaw
+# COP4530
+# February 11th, 2017
+
+HOME   = /home/courses/cop4530p/LIB
+CPP    = $(HOME)/cpp
+TCPP   = $(HOME)/tcpp
+AREA51 = $(HOME)/area51
+TESTS  = $(HOME)/tests
+
+#CC     = g++ -std=c++11 -Wall -Wextra -I. -I$(CPP) -I$(TCPP)
+CC     = clang++ -std=c++11 -I. -I$(CPP) -I$(TCPP)
+
+# -Weverything -Wno-old-style-cast
+
+all: ws.x
+
+ws.x: main_ws.o wordsmith.o xtring.o
+      $(CC) -o ws.x _______
+
+main_ws.o:
+
+wordsmith.o:
+
+xstring.o:
+
+flist2c.x: flist2c.cpp list2c.h $(TCPP)/ansicodes.h $(TCPP)/compare.h $(CPP)/xstring.cpp $(CPP)/xstring.h
+	$(CC) -o flist2c.x flist2c.cpp
+
+mlist2c.x: mlist2c.cpp list2c.h $(CPP)/xran.h
+	$(CC) -o mlist2c.x mlist2c.cpp
+
+flist.x: $(TESTS)/flist.cpp $(TCPP)/list.h $(TCPP)/ansicodes.h $(TCPP)/compare.h\
+$(CPP)/xstring.cpp $(CPP)/xstring.h
+	$(CC) -o flist.x $(TESTS)/flist.cpp 
+
+mlist.x: $(TESTS)/mlist.cpp $(TCPP)/list.h $(CPP)/xran.h $(CPP)/xranxstr.h $(CPP)/xstring.h
+	$(CC) -o mlist.x $(TESTS)/mlist.cpp 
+

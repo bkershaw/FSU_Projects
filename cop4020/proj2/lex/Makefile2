@@ -1,0 +1,11 @@
+all: ex2.exe
+
+ex2.exe: lex.yy.c
+	gcc -o $@ $< -lfl
+
+lex.yy.c: ex2.l
+	flex $<
+clean: 
+	rm -f ex2.exe *~ lex.yy* 
+
+

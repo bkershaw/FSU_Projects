@@ -1,0 +1,4 @@
+if call < 0 5 $ then call display "
+
+
+(if (<0 5) 4 6)

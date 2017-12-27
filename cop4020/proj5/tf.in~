@@ -1,0 +1,9 @@
+declare
+  num = 10
+  fac = 1
+begin
+  for i = 1 to num
+    set fac = call * i fac $
+  call display fac $
+  call newline $
+end

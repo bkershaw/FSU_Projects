@@ -1,0 +1,45 @@
+Log File 
+Blake Kershaw
+COP4530
+
+February 26th:
+	 Coppied over all files from proj4 directory into my proj4 directory,
+	 aswell as necessary .x files from area51 folder.
+
+February 27th:
+	 Createted oaa.h from oaa.begin, created a blank wordsmith2.h and .cpp
+	 file built makefile with all objects and executables. Compiled and
+	 appended any includes that were necessary in order to compile
+	 succusfully
+
+February 28th:
+	 Started by locating code provided in notes for oaa.h remaining
+	 functions.  Refactored Wordsmith with the new API in order to properly
+	 read and write files using Tree's. ran into a couple small issues where
+	 counts were off but realized thanks to Dr. Lacher I was using the wront
+	 constructor and this fixed my issue.
+
+March 2nd-3rd:
+         Completed Wordsmith2.cpp and moved on to oaa.h all functions have been
+         implmented and will move on to testing tomorrow.
+
+March 4th:
+         Should of used my time wisely earlier in the week, I have spent roughly
+         7hrs dealing with a segmentation fault in my RotateLeft conditional
+         statment.  Finally found the issue and my if() check for RotateLeft was
+         not strict enough and was causing a fault.  The next issue was to check
+         for left and right children that were red and convert them to black.
+         After project submission there is still a error in my code but I think
+         it is in my RInsert() function and will need table.100 to test for all
+         possibilites awaiting to where I can find the file for testing.
+         Dr. Lacher posted a snipet of code for RGet & RInsert.  updated my code
+         in RInsert aswell as Rget(although my Rget was almost identical to his)
+         RInsert now works nicely.  Still having issues with Erase() will play
+         with it in the morning.
+
+March 5th: 
+         Dr. Lacher added the tbl.100 file for testing so I coppied it and
+         quickly started to see where my issues were in Erase() it was only
+         testing for less than key and not if key was greater than k.  Once this
+         was fixed the code is erasing just as it should.          
+	 

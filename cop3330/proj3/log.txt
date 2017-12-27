@@ -1,0 +1,30 @@
+log.txt # log file for UIntSet project
+<September 29th, 2015>
+<Blake Kershaw>
+<kershaw>
+
+September 29th, 7:31 am - copied all files to my proj3 dir
+
+September 30th, 7:10 pm - complteted header file and working on uintset.cpp file.  I am struggling trying to 
+figure out how to use a variable without being alowed to declare any additional privat variables.
+
+October 3rd, 5pm -  Not sure what I was thinking 
+there is a predfined variable size_t in the header 
+file.  I guess I needed some fresh eyes.  Now If I 
+can just figure out how to properly use the bv_ 
+class I can figure out the last few member 
+functions and start testing.
+
+October 4th, 8:30am - Fresh eyes cures all.  
+clearly bv_(function call is the correct syntax).  
+Just need to fix a couple errors and warnings. and 
+we should be good.
+
+October 6th, 5:30pm - fixed errors and warnings my 
+program is compiling and giving same output as the 
+test files we are all good.  Just need to do some 
+code editing for readability and make sure 
+everything is perfect.
+
+October 7th, 2015 - found a missing space in my ostream member function.  I inserted a " " and now the file is 
+identical to the provided test file.

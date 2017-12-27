@@ -1,0 +1,16 @@
+declare
+  weekdays = '(mon tue wed thu fri)
+  days = call append weekdays '(sat sun) $
+  party = '()
+begin
+  set party = call member 'fri days $
+  call display "Going out on " $
+  for i = 0 to call −            call length party $ 1 $
+declare
+  day = call list-ref party i $
+begin
+  call display day $
+  call display " " $
+end
+  call newline $
+end

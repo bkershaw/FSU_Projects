@@ -1,0 +1,58 @@
+Text Analysis for files: data0.in, data1.in, data2.in, data3.in
+
+word                 frequency
+----                 ---------
+0                            2
+ain't                        1
+all                          2
+also                         2
+am                           1
+analysis                     1
+and                          2
+are                          2
+aren't                       1
+cat-city                     1
+chris                        1
+come                         8
+contains                     1
+contractions                 1
+data1                        1
+dog-town                     1
+end                          1
+favorite                     1
+file                         2
+files                        1
+for                          1
+frequency                    1
+good                         6
+hard                        18
+host-table                   1
+hyphenated                   1
+in                           1
+included                     1
+is                           1
+it                           1
+meaning                      2
+not                          2
+number                       1
+of                           4
+one                          3
+repeats                      1
+size                         1
+some                         3
+text                         1
+the                          3
+things                       4
+this                         2
+those                       14
+three                        3
+to                          10
+two                          2
+vocabulary                   1
+who                         12
+word                         1
+words                        3
+work                        16
+
+Number of words: 154
+Vocabulary size: 51

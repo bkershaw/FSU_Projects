@@ -1,0 +1,219 @@
+/*
+ * vehicles.cpp
+ *
+ *  Created on: Oct 13, 2015
+ *      Author: blake
+ */
+
+#include <iostream>
+#include <cstdlib>
+#include <cstring>
+#include <vehicles.h>
+#include <shapes.h>
+
+
+
+//~~~~~~~~~~VEHICLE~~~~~~~
+
+Vehicle::Vehicle() :
+  serialNumber_(0), passengerCapacity_(0),verbose_(0) {
+
+  if (Vehicle::verbose_)
+    std::cout << "Vehicle()\n";
+}
+Vehicle::Vehicle(char* sn, unsigned int pc, bool v) :
+  serialNumber_(sn), passengerCapacity_(pc), verbose_(v) {
+
+  size_t size = strlen(sn);
+  serialNumber_ = new (std::nothrow) char[size];
+  serialNumber_ [size - 1] = '\0';
+  strcpy (serialNumber_, sn);
+  if (Vehicle::verbose_)
+    std::cout << "Vehicle(sn, pc)\n";
+
+}
+Vehicle::~Vehicle() {
+  delete [] serialNumber_;
+  if (Vehicle::verbose_)
+    std::cout << "~Vehicle()\n";
+}
+
+const char* Vehicle::SerialNumber() const
+{
+  return serialNumber_;
+}
+
+unsigned int Vehicle::PassengerCapacity() const {
+  return passengerCapacity_;
+}
+float Vehicle::LoadCapacity() const {
+  return 0.0;
+}
+const char* Vehicle::ShortName() const {
+  return "UNK";
+}
+float Vehicle::Toll() const {
+  return 2.00; //Not a Truck so return $2.00
+}
+VehicleType Vehicle::SnDecode(const char* sn) {
+  std::cout << "sn = " << sn << "\n";
+  std::cout << "sn[0] = " << sn[0] << "\n";
+  switch (sn[0]) {
+    case '1':
+      return vehicle;
+      break;
+    case '2':
+      return car;
+      break;
+    case '3':
+      return truck;
+      break;
+    case '4':
+      return van;
+      break;
+    case '5':
+      return tanker;
+      break;
+    case '6':
+      return flatbed;
+      break;
+    default:
+      return badSn;
+  }
+}
+
+//~~~~~~~CAR~~~~~~~
+
+Car::Car() :
+  Vehicle() {
+  if (Vehicle::verbose_)
+    std::cout << "Car()\n";
+}
+
+Car::Car(char* sn, unsigned int pc, bool v) :
+  Vehicle(sn, pc, v) {
+  if (Vehicle::verbose_)
+    std::cout << "Car(sn, pc)\n";
+}
+
+Car::~Car() {
+  if (Vehicle::verbose_)
+    std::cout << "~Car()\n";
+}
+
+const char* Car::ShortName() const {
+  return "CAR";
+}
+
+//~~~~~~~~TRUCK~~~~~~~
+
+Truck::Truck() :
+  Vehicle(), DOTLicense_(0) {
+  if (Vehicle::verbose_)
+    std::cout << "Truck()\n";
+}
+
+Truck::Truck(char* sn, unsigned int pc, char* d, bool v): Vehicle(sn, pc, v), DOTLicense_(d)
+{
+  size_t size = strlen (d);
+  DOTLicense_ [size -1] = '\0';
+  strcpy (DOTLicense_, d);
+  if (Vehicle::verbose_)
+    std::cout << "Truck(DotL, sn, pc)\n";
+
+}
+Truck::~Truck() {
+  delete[] DOTLicense_;
+  if (Vehicle::verbose_)
+    std::cout << "~Truck()\n";
+}
+
+const char* Truck::ShortName() const {
+  return "TRK";
+}
+float Truck::Toll() const {
+  return 10.00; //truck toll
+}
+const char* Truck::DOTLicense() const {
+  return DOTLicense_;
+}
+
+//~~~~~~~VAN~~~~~~~
+
+Van::Van() :
+  Truck(), Box() {
+  if (Vehicle::verbose_)
+    std::cout << "Van()\n";
+}
+Van::Van(char* sn, unsigned int pc, char* d, float length, float width, float height, bool v) :
+  Truck(sn, pc, d, v), Box (length, width, height, v) {
+  if (Vehicle::verbose_)
+    std::cout << "Van(sn, pc, d, l, w, h)\n";
+}
+Van::~Van() {
+  if (Vehicle::verbose_)
+    std::cout << "~Van()\n";
+}
+float Van::LoadCapacity() const {
+  return Box::Volume();
+}
+const char* VADFFW Eh;iopv wefhkShorName() const {
+  return "VAN";
+}
+
+//~~~~~~~TANKER~~~~~~~
+Tanker::Tanker() :
+  Truck(), Cylinder() {
+  if (Vehicle::verbose_)
+    std::cout << "Tanker()\n";
+}
+Tanker::Tanker(char* sn, unsigned int pc, char* d, float length, float radius, bool v) :
+  Truck(sn, pc, d, v), Cylinder(length, radius, v) {
+  if (Vehicle::verbose_)
+    std::cout << "Tanker()\n";
+
+}
+
+Tanker::~Tanker() {
+  if (Vehicle::verbose_)
+    std::cout << "~Tanker(sn, pc, d, l, r)\n";
+}
+
+float Tanker::LoadCapacity() const {
+  return Cylinder::Volume();
+}
+
+const char* ShortName() const {
+  return "TNK";
+}
+
+//~~~~~~FLATBED~~~~~~
+
+Flatbed::Flatbed(): Truck(), Plane()
+{
+  if (Vehicle::verbose_)
+    std::cout << "Flatbed()\n";
+}
+
+Flatbed::Flatbed(char* sn, unsigned int pc, char* d, float length, float width, bool v):
+  Truck(sn, pc, d, v), Plane(length, width, v)
+{
+  if (Vehicle::verbose_)
+    std::cout << "Flatbed(sn, pc, d, l, w)\n";
+}
+
+Flatbed::~Flatbed()
+{
+  if (Vehicle::verbose_)
+    std::cout << "~Flatbed()\n";
+}
+float Flatbed::LoadCapacity() const
+{
+  return Plane::Area();
+}
+
+const char* Flatbed::ShortName() const
+{
+  return "FLT";
+}
+

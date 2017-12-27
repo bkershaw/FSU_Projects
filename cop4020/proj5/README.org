@@ -1,0 +1,13 @@
+* 12 pages of project description
+
+** pages 1-4 
+*** Micro-PL programming language syntax
+
+** pages 4-5
+*** How to load Micro-PL translator to Scheme session
+*** How to invoke the translator
+
+** pages 6-12
+*** How/What to implement Micro-PL Scheme translator
+*** How/What to map Micro-PL statement to 
+**** list of Scheme S-expressions
