@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main(int argc, char *argv[]){
+  
+  if(argc < 3 ){
+    printf("Wrong amount of command line arguments");
+    exit(0);
+  }
+
+  
+  
+
+  //create child process 
+  fork();
+
+  //share two pipes
+
+  //carry data to child
+
+  //4kb of data
+
+  //send block number and the block length to the child
+
+  //child writes data to output file and send block number back to parent
+
+  //parent acknowleges by comparing block from child
+
+  //parent contiunes until whole input file has been written to output file
+
+  return 0;
+}

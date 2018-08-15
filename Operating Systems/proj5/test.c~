@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <string.h>
+
+#define PARENT_READ_END      0
+#define PARENT_WRITE_END     1
+#define CHILD_READ_END       0
+#define CHILD_WRITE_END      1
+#define BUFFER_SIZE          25
+
+int main(int argc, char *argv[]){
+
+  char buffer[4096];
+
+  if(argc < 3 || argc > 3 ){
+    fprintf(stderr,"Wrong amount of command line arguments\n");
+    exit(1);
+  }
+
+  /* open input file */
+  FILE *fp = fopen(argv[1], "rb");
+
+  if(fp == NULL){
+    fprintf(stderr,"Error opening input file\n");
+    exit(1);
+  }
+
+  /* open output file */
+
+  
+  int fdP[2]; //parent pipe
+  int fdC[2]; //child pipe
+
+  fseek(fp, SEEK_SET, 0);
+  //  size_t si = 0;
+
+    char astr[5], bstr[5];
+    char finstr[25];
+    int block_number = 1;
+    int block_size; 
+
+    while(block_size = fread(buffer,1,4096,fp) ){
+
+      sprintf( astr, "%d", block_number);
+      sprintf( bstr, "%d", block_size);
+      strcpy(finstr, astr);
+      strcat(finstr, ":");
+      strcat(finstr, bstr);
+
+      printf("%s\n", finstr);
+
+    } //end while
+
+      fclose(fp);
+
+  return 0;
+}
