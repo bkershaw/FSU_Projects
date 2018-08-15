@@ -1,0 +1,43 @@
+#include "types.h"
+#include "user.h"
+#include "stat.h"
+#include "uspinlock.h"
+
+ struct shm_cnt{
+      struct uspinlock lock;
+      volatile int cnt;
+    }; 
+
+int main(){
+  int i; 
+  struct shm_cnt *pbase;
+  int pid = fork();
+  pbase = (struct shm_cnt *) shm_open(0xbeefbeef);
+  uinitlock(&pbase->lock); 
+
+  for(i = 0; i < 10000;  i ++){
+    uacquire(&pbase->lock);
+    pbase->cnt += 1;
+    urelease(&pbase->lock);
+  }
+
+ if (pid < 0) {
+    printf(1,"Fork failed\n");
+    exit();
+  }
+
+  // Parent Process
+  if (pid > 0){
+     wait();
+     printf(1,"Parent reads final pbase->cnt %d va address: %d\n", pbase->cnt, pbase);    
+  } //end parent proccess
+
+  // Child Process
+  else
+    ;  
+
+  shm_close(0xbeefbeef);
+  exit();
+
+  return 0;
+}
