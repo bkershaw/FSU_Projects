@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]){
+  if (argc < 2){
+    fprintf(stderr, "**Error: Not enought arguments\n" );
+    exit(1);
+  }
+  if (argc > 2){
+    fprintf(stderr, "**Error: too many arguments\n" );
+    exit(1);
+  }
+
+
+  int pid;
+  int i = atoi(argv[1]);
+
+  while(i != 0){
+    --i;
+    pid = fork();
+    int z = 0;
+    if (pid == 0)
+      printf("   Child Proccess PID:%d\n", getpid());
+    else{
+      wait(NULL);
+      printf("Parent Proccess PID:%d\n", getpid());
+    }
+  } 
+ 
+  return 0;
+}

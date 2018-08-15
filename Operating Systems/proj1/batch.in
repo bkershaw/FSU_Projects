@@ -1,0 +1,3 @@
+ls -l
+echo "Hello world, TinyShell!"
+pwd ; echo quit ; 
